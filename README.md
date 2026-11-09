@@ -1,17 +1,17 @@
 # Nachtbakkerij
 
-A fictional 24-hour canal-city bakery. Existing concept, copy, original synthetic oven artwork and [live URL](https://raj-microsoft.github.io/night-bakery/) preserved in the 2026-11-09 rework.
+A fictional 24-hour canal-city bakery. Existing concept, copy, 21st.dev components, design tokens and [live URL](https://raj-microsoft.github.io/night-bakery/) preserved in the 2026-11-09 rework.
 
 ## Full original guide
 [Build a $10K Website in Claude Code — Free Setup Guide](https://noocap.notion.site/Build-a-10K-Website-in-Claude-Code-Free-Setup-Guide-356508e99dda816c9d15ea892d4139f9), Chris Cordero (noocap).
 
-1. Agent setup: OpenClaw's coding agent stands in for Claude Code; no account or paid service.
+1. Agent setup: OpenClaw's coding agent stands in for Claude Code. The later photo pass used authorised logged-in ChatGPT/Gemini sessions; no purchase or API key.
 2. Framer Motion: scroll-triggered fades, staggered feature reveals, smooth link/button hover and menu transitions. Reduced motion removes movement/delay.
 3. Actual project skill: `.claude/skills/frontend-design/SKILL.md`, with typography, 8px spacing, semantic colours, button/card/form patterns and anti-generic rules. `DESIGN.md` is supporting context, not a substitute.
 4. Real 21st.dev components by Méschac Irung: Hero Section 1, Features 8, Pricing, Footer, adapted from the author's public MIT Tailark source. See [THIRD_PARTY.md](THIRD_PARTY.md), retained upstream sources and licence in `vendor/tailark/`, and on-page credits. The source viewer at 21st requires an account; used the linked open-source repository without signup.
 
 ## Starter requirements
-Sticky navbar; original headline/CTA hero; three feature cards; explicitly fictional social proof; fictional Bread Club pricing; FAQ; footer. Mobile-first new components, responsive incumbent layout, self-hosted Latin fonts with swap, and reduced motion. The only image is the above-fold hero, so it remains eager/high-priority; there are no below-fold images to lazy-load.
+Sticky navbar; original headline/CTA hero; three feature cards; explicitly fictional social proof; fictional Bread Club pricing; FAQ; footer. Mobile-first new components, responsive incumbent layout, self-hosted Latin fonts with swap, and reduced motion. The photoreal pass adds fifteen ChatGPT-generated food/place photographs with responsive WebP variants and lazy below-fold loading. The hero remains eager/high-priority. Gemini rejected both start-image uploads, so a labelled local steam/light H.264 fallback supplies muted background motion, with poster, pause and reduced-motion still. See [PHOTOREAL.md](PHOTOREAL.md) for provenance, payloads and verification.
 
 Substitution: retain the existing React/Vite static build instead of migrating to Next.js 14 App Router. Tailwind remains in use. No server, personal-data collection, checkout, claims of real customer reviews or real destination. Local section-by-section inspection replaces the starter prompt's interactive Claude Code review.
 
