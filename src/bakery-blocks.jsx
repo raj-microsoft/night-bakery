@@ -1,6 +1,7 @@
 // Adapted from Méschac Irung's Tailark components listed on 21st.dev.
 // MIT Copyright (c) 2025 Irung. See vendor/tailark/license.txt and THIRD_PARTY.md.
 import React from 'react';
+import { OvenMedia } from './photography';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Check, Moon } from 'lucide-react';
 
@@ -20,11 +21,11 @@ export function BakeryHero() {
   return <section className="hero shell" aria-labelledby="hero-title">
     <div className="masthead"><span>Good bread. At any hour.</span><span className="open-note"><span className="status-dot"/> Always open · 24/7</span></div>
     <div className="oven-window">
-      <img src={`${import.meta.env.BASE_URL}oven-still-life.webp`} className="oven-image" alt="Synthetic artwork of two flour-dusted loaves in a warmly lit stone oven" width="1800" height="1150" fetchPriority="high" decoding="async"/>
+      <OvenMedia/>
       <div className="oven-shade"/>
       <div className="hero-copy"><div><h1 id="hero-title">While the city sleeps,<br/><em>we bake.</em></h1><p>For the last ones home.<br/>And the first ones out.</p><div className="hero-actions"><BakeryLink className="button" href="#oven">See what’s baking <ArrowDown size={18}/></BakeryLink></div></div></div>
       <div className="hero-bottom"><span>A warm window on the canal.</span><span>From dusk. Until dusk.</span></div>
-    </div><div className="art-caption"><span>Nachtbakkerij · An imagined bakery in an imagined canal city</span><span>Original synthetic artwork</span></div>
+    </div><div className="art-caption"><span>Nachtbakkerij · An imagined bakery in an imagined canal city</span><span>AI-generated imagery</span></div>
   </section>;
 }
 
