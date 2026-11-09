@@ -16,4 +16,16 @@ Build passed. Headless Edge at 1440 and 390: full-page and hero screenshots insp
 Initial local mobile Lighthouse: 97 performance / 96 accessibility / 96 best practices / 100 SEO. Fixed its transient-opacity contrast warning (visible start .9 instead of .65), added favicon and initial-document hero discovery. Final live scores are recorded after deployment below.
 
 ## Publication verification
-Pending final deployment checks.
+Published code revision `dcceb55f9649016b428f2fea28780b0e632ad3a2`; GitHub Pages workflow 42539354491 succeeded. Live HTML returned 200 with the expected `index-CchSv--F.js` fingerprint. Re-ran the complete interactive verification on the public URL at 1440 and 390: all checks passed, no overflow or page exceptions, original art loaded, keyboard controls and anchor destinations valid. Inspected full-page captures and detailed mobile crops.
+
+Ran the requested headless Edge `--screenshot` captures. Edge's native 390px window flag produced a minimum-width/clipped capture, so the authoritative 390px verification uses headless Edge through Playwright's explicit viewport override (`innerWidth=scrollWidth=390`), saved as `verification/live-edge-390-corrected.png`. This is a capture-tool limitation, not site overflow.
+
+All 13 unique external page links returned HTTP 200 after publication, including original Notion guide, each component, source skill and provenance. All internal anchor IDs resolve. Sources checked 2026-11-09.
+
+### Live Lighthouse 13.6.0 — 2026-11-09
+| Mode | Performance | Accessibility | Best practices | SEO |
+|---|---:|---:|---:|---:|
+| Mobile (simulated throttling) | 96 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+Mobile FCP 0.8s, LCP 2.5s, TBT 120ms, CLS 0; desktop FCP 0.3s, LCP 0.6s, TBT 0ms, CLS 0. Reports: `verification/lighthouse-live-mobile.{json,html}` and `verification/lighthouse-live-desktop.{json,html}`. Lighthouse target exceeded. Remaining non-blocking opportunities: GitHub Pages' platform-controlled ten-minute asset cache lifetime; original artwork could be compressed/resized further; some library JavaScript is unused in the initial viewport. No known functional issue. Reports are lab measurements, not field performance guarantees.
