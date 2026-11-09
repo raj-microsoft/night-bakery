@@ -1,29 +1,19 @@
-# Finish review — 2026-11-09
+# Rework review — 2026-11-09
 
-Review performed inline because this assigned researcher workflow prohibits further delegation. Product interview was substituted with explicitly labeled assumptions from the provided execution brief.
+## Scope and method
+Preserved the live concept, existing bakery copy, original synthetic artwork and URL. Followed all four steps of Chris Cordero's full original Notion guide rather than the truncated library card. Assumptions taken from the explicit execution brief in this subagent workflow, not an interview. No further delegation.
 
-## disposition: ship
+Added the actual `.claude/skills/frontend-design/SKILL.md`, token/spacing alignment, sticky navigation, three feature cards, explicit fictional social proof, fictional Bread Club plan, FAQ and the four credited MIT 21st.dev/Tailark adaptations. No sign-up or paid service used. Vite retained instead of Next.js; documented on page and in README. See THIRD_PARTY.md for exact upstream revision, source and license verification.
 
-## persistence
-PRODUCT.md, pre-build DESIGN.md (required by guide) and SURFACE.md exist. Code-led build, no generated comp or paid image service. Original raster source and provenance sidecar are present. Seed reference recorded.
+## Design detector
+Initial rendered built HTML plus CSS scan found typography/spacing advisories from Tailwind vendor-source scanning and static CSS interpretation, plus repeated short-sentence copy. Removed vendor files from Tailwind scanning, made section spacing explicit, adjusted added copy, and checked computed layout.
 
-## fidelity
-- TYPE: match — self-hosted Bodoni Moda display with Manrope functional text; roman emphasis. Small text raised to at least 12px except the compact 11px next-batch label.
-- MATERIAL: match — original, clearly labeled synthetic oven still life. Procedural rendering is intentionally illustrative rather than photography.
-- GROUND: match — aubergine night and large apricot menu field.
-- Oven aperture and visible schedule action: match.
-- Running order: match, local Amsterdam clock selects one next batch.
-- Menu, four scenes and fictional visit: match. Tabs and accordion tested.
-- Mobile: intentional adaptation to vertical schedule and stacked content, without overflow at 390px.
+Final rendered/computed-style scan: **0 errors, 1 warning** (`aphoristic-cadence`). It matches retained original fictional-address copy: “An imaginary address, not a real destination. No reservations.” This is an intentional exception to preserve the user-requested copy and essential non-business disclosure; do not remove the honesty label to satisfy a heuristic. No remaining spacing or typography findings. Detector input includes built CSS and the browser's computed styles so custom properties, logical padding and inner shells are not misread. Raw results and spacing measurements are in local ignored verification/.
 
-## ceiling
-No photography or real bakery proof was requested or supplied. Synthetic illustration is not presented as a real business image. Artwork could be upgraded to commissioned photography for a real deployment.
+## Local verification
+Build passed. Headless Edge at 1440 and 390: full-page and hero screenshots inspected; no overflow or JS exceptions; artwork loaded, exactly one next bake; sticky header at top 0. Menu pointer and keyboard tabs, story accordion, FAQ and making disclosure passed. Anchor IDs all resolve. Three feature cards present. Reduced motion uses auto scrolling and immediate content; normal-motion reveal ends at opacity 1 with no transform. Hero image preload and font preloads added; unused Bodoni weight removed. No below-fold images exist, so the sole LCP image is eager/high-priority rather than lazily delayed.
 
-## material_fixes
-Initial detector flagged small type and italic display; both corrected. Two rendered-DOM padding advisories remain false positives: colored menu/visit wrappers have 12px explicit inline padding plus a centered inner shell, visibly inset 20px on mobile and 56px on desktop. The built HTML/source detector returns []. Built HTML uses the Pages base path, so the detector cannot directly resolve its absolute linked CSS; rendered-DOM checks and browser measurements supplement it.
+Initial local mobile Lighthouse: 97 performance / 96 accessibility / 96 best practices / 100 SEO. Fixed its transient-opacity contrast warning (visible start .9 instead of .65), added favicon and initial-document hero discovery. Final live scores are recorded after deployment below.
 
-## keep
-Preserve the warm oven aperture, night-to-apricot rhythm, honest fictional labeling and accessible library behavior.
-
-## Verification
-Production build successful. Headless Microsoft Edge at 1440 and 390: full-page and first-viewport captures inspected; no horizontal overflow, no page errors, all artwork loaded, exactly one next batch. Menu tabs (pointer and keyboard), story accordion and guide disclosure passed. Reduced-motion mode sets scroll behavior to auto and removes animation. Public deployment checks are recorded in verification/results.json locally (not served).
+## Publication verification
+Pending final deployment checks.
