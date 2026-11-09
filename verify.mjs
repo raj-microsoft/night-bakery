@@ -15,7 +15,7 @@ for(const width of [1440,390]){
  await page.getByRole('button',{name:'04:00 Good things take the quiet hours.'}).click();await page.getByText('Our fictional baker, Noor, shapes',{exact:false}).waitFor();
  await page.getByText('Can I visit or order?',{exact:true}).click();await page.getByText('Nachtbakkerij, Lichtdam',{exact:false}).waitFor();
  await page.getByText('How this was made',{exact:true}).click();await page.getByText('Step 4 — real 21st.dev components.',{exact:false}).waitFor();
- const images=await page.locator('img').evaluateAll(imgs=>imgs.every(i=>i.complete&&i.naturalWidth>0));
+ const images=await page.locator('img').evaluateAll(async imgs=>{imgs.forEach(i=>i.loading='eager');await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));return imgs.every(i=>i.complete&&i.naturalWidth>0)});
  const nextCount=await page.locator('.next-batch').count();
  const reduced=await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior);
  const sticky=await page.locator('header').evaluate(el=>({position:getComputedStyle(el).position,top:el.getBoundingClientRect().top}));

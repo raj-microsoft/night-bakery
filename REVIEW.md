@@ -29,3 +29,17 @@ All 13 unique external page links returned HTTP 200 after publication, including
 | Desktop | 100 | 100 | 100 | 100 |
 
 Mobile FCP 0.8s, LCP 2.5s, TBT 120ms, CLS 0; desktop FCP 0.3s, LCP 0.6s, TBT 0ms, CLS 0. Reports: `verification/lighthouse-live-mobile.{json,html}` and `verification/lighthouse-live-desktop.{json,html}`. Lighthouse target exceeded. Remaining non-blocking opportunities: GitHub Pages' platform-controlled ten-minute asset cache lifetime; original artwork could be compressed/resized further; some library JavaScript is unused in the initial viewport. No known functional issue. Reports are lab measurements, not field performance guarantees.
+
+## Photoreal live verification — 2026-11-09
+Published application revision: `1240083`; live asset `index-Cn3hjuoT.js` verified on GitHub Pages.
+
+| Live Lighthouse | Performance | Accessibility | Best practices | SEO |
+| --- | ---: | ---: | ---: | ---: |
+| Mobile | 99 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+Final live Lighthouse mobile LCP 2.0s, desktop LCP 0.6s, CLS 0 on both. Audit files: `verification/lighthouse-photoreal-final-{mobile,desktop}.{json,html}`. The first audit exposed a motion-control visible-label mismatch; fixed and confirmed passing in the final run. An earlier desktop SEO run timed out fetching the domain robots.txt; final live rerun passed 100.
+
+Headless Edge verified exact 390px and 1440px viewports (no horizontal overflow), and screenshots were visually inspected. `verify.mjs` and `verify-photos.mjs` passed on the live page: all nine menu photographs, all four scenes and exterior decode, no JavaScript errors, keyboard/menu/accordion/FAQ/disclosure interactions pass. Muted loop playback, pause/resume and reduced-motion still confirmed. The baseline image test was updated to await lazy image decoding rather than incorrectly declaring still-pending images broken. Edge CLI minimum-width clipping was replaced with exact Playwright viewport control using the real Edge executable.
+
+Impeccable detector: zero findings on rendered built HTML. All 13 external source/credit links returned HTTP 200; transient GitHub 504s were rechecked via cache-busting fetch and headless Edge navigation. Existing sources and credits retained. Full provenance, the honest Gemini upload-failure fallback and payload sizes: `PHOTOREAL.md`.

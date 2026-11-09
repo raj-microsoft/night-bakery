@@ -21,3 +21,5 @@ Gemini's Create video interface was selected in a new private-to-this-task tab. 
 
 ## Verification
 `npm run build`, `node verify.mjs`, `node verify-photos.mjs`: headless Edge at 390/1440, all nine menu photos and all four scenes decode, tabs/keyboard/accordion/FAQ/disclosure pass, no overflow or JavaScript errors, reduced-motion suppresses video, normal motion uses mobile MP4 and pause/resume works. Photo section screenshots inspected. Impeccable detector on rendered built HTML: zero findings. Live audit recorded in REVIEW.md after publication.
+
+Final live Lighthouse (2026-11-09): mobile **99 / 100 / 100 / 100**, desktop **100 / 100 / 100 / 100** (performance / accessibility / best practices / SEO). CLS 0. All 13 external links HTTP 200 after transient-upstream retries. Exact-width live Edge screenshots inspected; final photo/motion and keyboard tests passed. See REVIEW.md for audit paths.
